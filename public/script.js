@@ -3,11 +3,6 @@
 //Cor padrão da mensagem
 var corInput = cinza;
 
-//Função que pega a cor que o usuário escolheu
-function infoUsuario() {
-    corInput = document.querySelector("input[type=radio][name=cor]:checked").value;
-}
-
 //Cria uma instância do socket.io
 const socket = io();
 
@@ -21,7 +16,26 @@ const mensagens = document.getElementById("mensagens");
 const nomeInput = document.getElementById("nome");
 
 //Id do socket
-  var socketID;
+var socketID;
+
+//Função que pega a cor que o usuário escolheu
+function infoUsuario() {
+    corInput = document.querySelector("input[type=radio][name=cor]:checked").value;
+}
+
+//Desabilita o input de entrar
+document.getElementById("btnEntrar").disabled = true;
+
+// Adiciona um evento de escuta para detectar mudanças no input
+nomeInput.addEventListener('input', function() {
+
+  if(nomeInput.value === '') {//Input vazio
+    document.getElementById("btnEntrar").disabled = true;
+
+  } else { //Input com valor
+    document.getElementById("btnEntrar").disabled = false;
+  }
+});
 
 //Evento de envio do formulário
 document.querySelector("form").addEventListener("submit", (event) => {
@@ -62,7 +76,6 @@ var minhaDiv = document.getElementById("mensagens");
 //Pega o id do usuário para verificação da mensagem
 socket.on('connect', function() {
   socketID = socket.id;
-  console.log('Socket ID:', socketID);
 });
 
 //Envia e recebe a mensagem
@@ -167,7 +180,6 @@ function limparChat(){
       Swal.fire("Apagado!", "", "success");
       document.getElementById('mensagens').innerHTML = ""
     } else if (result.isDenied) {
-      console.log('negado')
     }
   });
 }
