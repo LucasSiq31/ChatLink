@@ -1,4 +1,4 @@
-<h2 style="display: flex"><img width='25px' src='https://chatlink-qsyw7wte.b4a.run/imagens/logo.png'/> Chat Link</h2>
+<h2>Chat Link</h2>
 
 <b>Como Funciona:</b>
 
@@ -17,8 +17,6 @@
 - 📱 Site Responsivo para todas as plataformas.
 
 ##
-
--Acesse à aplicação: https://chatlink-qsyw7wte.b4a.run/
 
 ##
 <b>Feito com:</b>
