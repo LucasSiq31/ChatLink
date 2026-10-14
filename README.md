@@ -45,11 +45,11 @@ Este chat foi desenvolvido como uma atividade prática para aplicar conceitos de
 
 - Faça o download do arquivo pelo github e abra a pasta no terminal.
 
-- Instalar o node pelo link: 
+- Instalar o node pelo link oficial 
 
 - Você pode verificar se o node ja está instalado com o comando no terminal; <br>
 ``` 
-npm- -v 
+npm -v 
 ```
 
 - Executar o seguinte comando no terminal para instalar os node-modules:
